@@ -6,7 +6,17 @@ let proxX;
 
 let proxY;
 
-window.onload = function () {
+let tamanhoCobraPadrao = 3;
+
+let tamanhoCobra = tamanhoCobraPadrao;
+
+let caminhoCobra = [];
+
+let cobraX = cobraY = 10;
+
+let comidaX = comidaY = 15;
+
+window.onload = function() {
     tela = document.getElementById("canvas");
 
     ctx = tela.getContext("2d");
@@ -14,7 +24,7 @@ window.onload = function () {
     let vel = 8;
 
     setInterval(desenharJogo, 1000 / vel);
-}
+};
 
 function keyDownEvent(tecla) {
     if (tecla = 37) {
@@ -33,4 +43,11 @@ function keyDownEvent(tecla) {
         proxX = 0;
         proxY = 1;
     }
+}
+
+function desenharJogo() {
+
+    ctx.fillStyle = "black";
+
+    ctx.fillRect = (0 , 0, tela.width, tela.height);
 }
