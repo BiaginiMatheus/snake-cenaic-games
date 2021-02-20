@@ -23,6 +23,8 @@ window.onload = function() {
 
     ctx = tela.getContext("2d");
 
+    document.addEventListener("keydown", keyDownEvent);
+
     let vel = 8;
 
     setInterval(desenharJogo, 1000 / vel);
@@ -49,6 +51,9 @@ function keyDownEvent(tecla) {
 
 function desenharJogo() {
 
+    cobraX = cobraX+proxX;
+    cobraY = cobraY+proxY;
+
     ctx.fillStyle = "#d1e0de";
 
     ctx.fillRect(0 , 0, tela.width, tela.height);
@@ -70,4 +75,5 @@ function desenharJogo() {
         x:cobraX,
         y:cobraY
     });
+    
 }
