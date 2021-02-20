@@ -16,6 +16,8 @@ let cobraX = cobraY = 10;
 
 let comidaX = comidaY = 15;
 
+let tamanhoQuadradinho = tamanhoCaminho = 20;
+
 window.onload = function() {
     tela = document.getElementById("canvas");
 
@@ -47,7 +49,25 @@ function keyDownEvent(tecla) {
 
 function desenharJogo() {
 
-    ctx.fillStyle = "black";
+    ctx.fillStyle = "#d1e0de";
 
-    ctx.fillRect = (0 , 0, tela.width, tela.height);
+    ctx.fillRect(0 , 0, tela.width, tela.height);
+
+    ctx.fillStyle = "#28abd7";
+
+    for(let i = 0; i<caminhoCobra.length;i++){
+        ctx.fillRect(
+            caminhoCobra[i].x*tamanhoCaminho,
+            caminhoCobra[i].y*tamanhoCaminho,
+            tamanhoCaminho,
+            tamanhoCaminho
+        );
+        if(caminhoCobra[i].x==cobraX && caminhoCobra[i].y == cobraY){
+            tamanhoCobra = tamanhoCobraPadrao;
+        }
+    }
+    caminhoCobra.push({
+        x:cobraX,
+        y:cobraY
+    });
 }
