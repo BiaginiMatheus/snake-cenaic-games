@@ -1,7 +1,7 @@
 let tela;
 
 let ctx;
-
+//Colocar igual a zero
 let proxX;
 
 let proxY;
